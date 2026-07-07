@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="100%" height="100%" fill="#0b1b2b"/>
+  <rect x="40" y="60" width="220" height="90" fill="#bb6bff" rx="10"/>
+  <text x="150" y="120" font-size="18" fill="#fff" text-anchor="middle">Restaurant Interior</text>
+</svg>
