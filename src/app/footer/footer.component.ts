@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   template: `
     <footer class="site-footer">
       <div class="footer-top page-shell">
         <div class="footer-brand">
-          <a class="footer-logo" routerLink="/">MEPTEQ</a>
+          <a class="footer-logo" href="#top">MEPTEQ</a>
           <p>
             MepTeq specializes in high-quality HVAC, plumbing, electrical, and fire protection solutions for residential, commercial, and industrial projects.
           </p>
@@ -20,16 +19,19 @@ import { RouterLink } from '@angular/router';
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Testimonials</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#partners">Partners</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
 
-        <div class="footer-social-panel">
-          <h4>Follow Us</h4>
+        <div class="footer-contact-panel">
+          <h4>Contact</h4>
+          <p>dhake9322@gmail.com</p>
+          <p>+91 7798097620</p>
+          <p>Mumbai · Bangalore</p>
           <div class="footer-socials">
             <a class="social facebook" href="#" aria-label="Facebook">f</a>
             <a class="social twitter" href="#" aria-label="Twitter">t</a>
