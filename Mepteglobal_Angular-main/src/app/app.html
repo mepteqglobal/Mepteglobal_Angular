@@ -1,0 +1,43 @@
+﻿<main class="page-shell" id="top">
+  <header class="topbar">
+    <a class="brand" href="#home">
+      <svg class="nav-logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#5b6bff" />
+            <stop offset="100%" stop-color="#bb6bff" />
+          </linearGradient>
+        </defs>
+        <rect width="48" height="48" rx="10" fill="url(#g1)" />
+        <g fill="#fff" transform="translate(6,6)">
+          <path d="M6 0 L12 10 L0 10 Z" opacity="0.95" />
+          <circle cx="18" cy="6" r="6" opacity="0.9" />
+        </g>
+      </svg>
+      <span class="brand-text">Mepteq</span>
+    </a>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Toggle navigation"
+      aria-controls="primary-nav"
+      [attr.aria-expanded]="menuOpen"
+      (click)="toggleMenu()"
+    >
+      <span aria-hidden="true">{{ menuOpen ? '×' : '☰' }}</span>
+    </button>
+    <nav class="nav-links" [class.open]="menuOpen" id="primary-nav" aria-label="Primary navigation">
+      @for (link of navLinks; track link.label) {
+        <a [href]="link.path" (click)="closeMenu()">{{ link.label }}</a>
+      }
+    </nav>
+  </header>
+
+  <app-home></app-home>
+  <app-about></app-about>
+  <app-projects></app-projects>
+  <app-partners></app-partners>
+  <app-contact></app-contact>
+
+  <app-footer></app-footer>
+</main>
