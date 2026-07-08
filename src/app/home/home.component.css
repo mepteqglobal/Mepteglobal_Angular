@@ -1,0 +1,171 @@
+/* Hero Section */
+
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.8)),
+        url("assets/images/hero-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+    overflow:hidden;
+}
+
+.hero-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at center,
+    rgba(0,180,255,.08),
+    transparent 60%);
+}
+
+.hero-content{
+
+    position:relative;
+    z-index:2;
+
+    width:90%;
+    max-width:1100px;
+
+    text-align:center;
+}
+
+.hero h1{
+
+    color:#ffffff;
+    font-size:64px;
+    font-weight:800;
+    line-height:1.2;
+
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+
+    background:linear-gradient(90deg,#9adf2d,#19b66d);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+    color:#dddddd;
+
+    font-size:22px;
+
+    margin-bottom:35px;
+}
+
+.hero-tags{
+
+    display:flex;
+    justify-content:center;
+    gap:18px;
+
+    margin-bottom:35px;
+
+    flex-wrap:wrap;
+}
+
+.hero-tags span{
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    color:white;
+
+    background:#123329;
+
+    border:1px solid #2ca86f;
+
+    font-size:15px;
+}
+
+.hero-buttons{
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.btn-primary{
+
+    padding:16px 36px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:linear-gradient(90deg,#a7f22c,#27c86d);
+
+    color:white;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+
+    padding:16px 36px;
+
+    border-radius:40px;
+
+    background:transparent;
+
+    border:2px solid white;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.btn-outline:hover{
+
+    background:white;
+    color:#111;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero p{
+
+font-size:17px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+align-items:center;
+
+}
+
+}
