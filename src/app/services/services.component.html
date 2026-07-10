@@ -44,4 +44,58 @@
       </article>
     </div>
   </div>
+
+  <!-- ── Services Offered ── -->
+  <div class="offered-section">
+    <div class="offered-header">
+      <span class="services-kicker">WHAT WE DO</span>
+      <h2 class="offered-title">Services Offered</h2>
+    </div>
+
+    <div class="offered-layout">
+      <div class="offered-col">
+        <div class="offered-item" *ngFor="let s of offeredLeft">
+          <div class="offered-pill" [style.background]="s.bg">
+            <span class="offered-name">{{ s.title }}</span>
+            <span class="offered-num" [style.background]="s.accent">{{ s.num }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="offered-hub-wrap">
+        <div class="offered-hub">
+          <span>Services<br>offered</span>
+        </div>
+      </div>
+
+      <div class="offered-col">
+        <div class="offered-item" *ngFor="let s of offeredRight">
+          <div class="offered-pill offered-pill--flip" [style.background]="s.bg">
+            <span class="offered-num" [style.background]="s.accent">{{ s.num }}</span>
+            <span class="offered-name">{{ s.title }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 23 Years Excellence Timeline ── -->
+  <div class="excellence-section">
+    <div class="excellence-header">
+      <h2>Showcasing 23 Years of Global MEP Project Excellence</h2>
+      <p>Highlighting 500+ diverse projects across commercial, residential, hospitality, and industrial sectors worldwide</p>
+    </div>
+
+    <div class="timeline-wrap">
+      <div class="timeline-track"></div>
+      <div class="timeline-item" *ngFor="let item of timelineItems">
+        <div class="timeline-bubble" [style.background]="item.color">{{ item.num }}</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>{{ item.title }}</h4>
+          <p [innerHTML]="item.text"></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

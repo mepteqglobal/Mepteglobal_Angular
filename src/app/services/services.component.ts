@@ -30,6 +30,43 @@ interface ServiceCategory {
   styleUrls: ['./services.component.css']
 })
 export class ServicesComponent {
+  readonly offeredLeft = [
+    { num: '01', title: 'Advanced HVAC System',        bg: 'rgba(196,181,253,0.12)', accent: '#7c3aed' },
+    { num: '02', title: 'Electrical HT LT',             bg: 'rgba(252,165,165,0.12)', accent: '#ef4444' },
+    { num: '03', title: 'Extra Low Voltage Services',  bg: 'rgba(94,234,212,0.12)',  accent: '#0d9488' },
+    { num: '04', title: 'Sustainable Plumbing',        bg: 'rgba(253,224,71,0.12)',  accent: '#ca8a04' },
+  ];
+
+  readonly offeredRight = [
+    { num: '05', title: 'Master Planning for Large Infrastructure', bg: 'rgba(253,224,71,0.12)',  accent: '#ca8a04' },
+    { num: '06', title: 'Design of Fire Fighting & Detection',      bg: 'rgba(94,234,212,0.12)',  accent: '#0d9488' },
+    { num: '07', title: 'Peer Review of Third-Party Design',        bg: 'rgba(252,165,165,0.12)', accent: '#ef4444' },
+    { num: '08', title: 'Building Management System',               bg: 'rgba(196,181,253,0.12)', accent: '#7c3aed' },
+  ];
+
+  readonly timelineItems = [
+    {
+      num: 1, color: '#1e3a5f', title: 'Expertise',
+      text: 'Over 23 years delivering <strong>comprehensive MEP solutions</strong> worldwide with technical excellence and global compliance.'
+    },
+    {
+      num: 2, color: '#06b6d4', title: 'Portfolio',
+      text: 'Involved in 500+ projects across pharmaceuticals, hotels, villas, and towers, showing <strong>versatility and sector knowledge</strong>.'
+    },
+    {
+      num: 3, color: '#eab308', title: 'Flagship',
+      text: 'Projects like <strong>Burj Khalifa, Weatherford Oils & Tools, Abu-Dhabi</strong> and Radisson Hotels highlight ability to manage complex, high-profile developments.'
+    },
+    {
+      num: 4, color: '#4b6282', title: 'Services',
+      text: 'Specialized in MEP audits and rectification, ensuring <strong>operational efficiency</strong> and system optimization for facilities.'
+    },
+    {
+      num: 5, color: '#1e3a5f', title: 'Versatility',
+      text: 'Proven across commercial, residential, hospitality, and industrial sectors, adapting MEP designs to varied needs.'
+    },
+  ];
+
   readonly serviceCategories: ServiceCategory[] = [
     {
       title: 'Plumbing & Fire Protection',

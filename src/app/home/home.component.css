@@ -175,6 +175,101 @@
   animation: fadeInUp 0.6s ease-out 0.6s both;
 }
 
+/* ── 23 Years Global Experience ── */
+.global-exp {
+  padding: clamp(56px, 7vw, 96px) clamp(18px, 5vw, 64px);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.08), transparent 50%),
+    linear-gradient(180deg, #060708 0%, #0a0d0f 100%);
+}
+
+.global-shell {
+  width: min(100%, 1160px);
+  margin: 0 auto;
+}
+
+.global-title {
+  margin: 0 0 clamp(32px, 5vw, 52px);
+  color: #f0f6f2;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+
+.global-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.global-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.global-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #111b25 0%, #0d1520 100%);
+  border: 1px solid rgba(53, 208, 127, 0.15);
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.45);
+  transition: box-shadow 300ms ease, transform 300ms ease;
+}
+
+.global-card:hover .global-img-wrap {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 64px rgba(34, 197, 94, 0.15), 0 20px 52px rgba(0, 0, 0, 0.5);
+}
+
+.global-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 360ms ease;
+}
+
+.global-card:hover .global-img-wrap img {
+  transform: scale(1.05);
+}
+
+.global-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(4, 10, 8, 0.55));
+  pointer-events: none;
+}
+
+.global-label {
+  color: #31cc76;
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .global-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+    gap: 36px;
+  }
+
+  .global-img-wrap {
+    aspect-ratio: 4 / 3;
+  }
+}
+
 .btn-primary {
   border: 0;
   background: linear-gradient(90deg, #19c36b, #1bd176);
@@ -229,5 +324,124 @@
 
   .hero {
     padding-inline: 16px;
+  }
+}
+
+/* ── Why Mepteq Global ── */
+.why-section {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  min-height: 480px;
+}
+
+.why-left {
+  padding: clamp(40px, 6vw, 72px) clamp(24px, 4vw, 52px);
+  background: #111b3a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.why-left h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.why-left p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.97rem;
+  line-height: 1.75;
+}
+
+.why-right {
+  padding: clamp(36px, 5vw, 60px) clamp(24px, 4vw, 56px);
+  background:
+    radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.06), transparent 40%),
+    #0d1117;
+  display: flex;
+  align-items: center;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px 40px;
+  width: 100%;
+}
+
+.why-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.why-thumb {
+  position: relative;
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.why-thumb--blue  { background: rgba(37,  99, 235, 0.18); }
+.why-thumb--pink  { background: rgba(236, 72, 153, 0.15); }
+.why-thumb--teal  { background: rgba(13, 148, 136, 0.18); }
+.why-thumb--gold  { background: rgba(202, 138,  4, 0.18); }
+
+.why-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.why-thumb-icon {
+  position: relative;
+  font-size: 1.7rem;
+  z-index: 1;
+  line-height: 1;
+}
+
+.why-text h3 {
+  margin: 0 0 8px;
+  color: #f0f6f2;
+  font-size: 0.97rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.why-text p {
+  margin: 0;
+  color: #7a9aa8;
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 1040px) {
+  .why-section {
+    grid-template-columns: 1fr;
+  }
+
+  .why-left {
+    padding-block: clamp(36px, 5vw, 56px);
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 }

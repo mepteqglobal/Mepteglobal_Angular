@@ -11,7 +11,7 @@
 
 .section-head {
   width: min(100%, 1280px);
-  margin: 0 auto 34px;
+  margin: 0 auto 48px;
 }
 
 .section-label {
@@ -25,28 +25,124 @@
 
 .section-head h2 {
   max-width: 760px;
-  margin: 0;
+  margin: 0 0 14px;
   font-size: clamp(2rem, 4.2vw, 3.3rem);
   line-height: 1.08;
   text-wrap: balance;
 }
 
-.project-grid {
+.section-sub {
+  margin: 0;
+  color: #8da4ae;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ── Featured Projects ── */
+.featured-grid {
   width: min(100%, 1280px);
-  margin: 0 auto;
+  margin: 0 auto 64px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.featured-card {
+  border: 1px solid rgba(53, 208, 127, 0.2);
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(11, 18, 14, 0.95);
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-img-wrap {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: linear-gradient(135deg, #131f2e 0%, #0d1520 100%);
+}
+
+.featured-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 360ms ease;
+  display: block;
+}
+
+.featured-card:hover .featured-img-wrap img {
+  transform: scale(1.05);
+}
+
+.featured-info {
+  padding: 24px 26px 28px;
+  flex: 1;
+}
+
+.featured-info h3 {
+  margin: 0 0 12px;
+  color: #31cc76;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.featured-info p {
+  margin: 0;
+  color: #a8bfc9;
+  font-size: 0.93rem;
+  line-height: 1.75;
+}
+
+/* ── Category Sections ── */
+.category-section {
+  width: min(100%, 1280px);
+  margin: 0 auto 60px;
+}
+
+.cat-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.cat-tag {
+  display: inline-flex;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: rgba(49, 204, 118, 0.1);
+  border: 1px solid rgba(49, 204, 118, 0.28);
+  color: #82e6aa;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+}
+
+.cat-title {
+  margin: 0;
+  color: #f0f6f2;
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  font-weight: 800;
+}
+
+/* ── Project Grid ── */
+.project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  gap: 20px;
 }
 
 .project-card {
   position: relative;
-  min-height: clamp(240px, 28vw, 330px);
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  border: 1px solid rgba(53, 208, 127, 0.2);
-  border-radius: 28px;
-  background: rgba(11, 16, 13, 0.95);
-  box-shadow: 0 24px 60px rgba(10, 14, 30, 0.35);
+  border: 1px solid rgba(53, 208, 127, 0.15);
+  border-radius: 20px;
+  background: linear-gradient(135deg, #131f2e 0%, #0d1520 100%);
+  box-shadow: 0 18px 48px rgba(10, 14, 30, 0.3);
+  cursor: pointer;
 }
 
 .project-card img {
@@ -54,11 +150,11 @@
   height: 100%;
   object-fit: cover;
   transition: transform 300ms ease;
+  display: block;
 }
 
-.project-card:hover img,
-.project-card:focus-within img {
-  transform: scale(1.06);
+.project-card:hover img {
+  transform: scale(1.07);
 }
 
 .project-overlay {
@@ -66,29 +162,159 @@
   inset: 0;
   display: flex;
   align-items: flex-end;
-  padding: 26px;
-  background: linear-gradient(180deg, transparent 40%, rgba(4, 9, 21, 0.96));
+  padding: 20px;
+  background: linear-gradient(180deg, transparent 35%, rgba(4, 9, 21, 0.94));
+  opacity: 0;
+  transition: opacity 280ms ease;
 }
 
-.project-overlay h3 {
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay h4 {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-size: clamp(0.88rem, 1.6vw, 1.05rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* always show title on touch devices */
+@media (hover: none) {
+  .project-overlay {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 1050px) {
   .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
   .project-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 16px;
   }
 
-  .project-card {
-    min-height: 230px;
+  .featured-grid {
+    gap: 20px;
+  }
+
+  .cat-header {
+    flex-wrap: wrap;
   }
 }
+
+/* ── Project List Table ── */
+.proj-table-section {
+  width: min(100%, 1280px);
+  margin: 0 auto 48px;
+  padding-top: clamp(40px, 5vw, 64px);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.proj-table-head {
+  margin-bottom: 28px;
+}
+
+.proj-table-title {
+  margin: 10px 0 0;
+  color: #f0f6f2;
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  font-weight: 800;
+}
+
+.proj-table-scroll {
+  overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(53, 208, 127, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.proj-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 700px;
+}
+
+.proj-table thead tr {
+  background: linear-gradient(90deg, #1a3a2a, #163324);
+}
+
+.proj-table thead th {
+  padding: 14px 18px;
+  color: #82e6aa;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(53, 208, 127, 0.2);
+}
+
+.proj-table tbody tr {
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 180ms ease;
+}
+
+.proj-table tbody tr.row-even {
+  background: rgba(49, 204, 118, 0.04);
+}
+
+.proj-table tbody tr:hover {
+  background: rgba(49, 204, 118, 0.09);
+}
+
+.proj-table td {
+  padding: 13px 18px;
+  color: #c8ddd5;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+.td-sn {
+  color: #82e6aa;
+  font-weight: 700;
+  font-size: 0.82rem;
+  width: 48px;
+  text-align: center;
+}
+
+.td-name {
+  color: #e8f2ec;
+  font-weight: 600;
+  max-width: 340px;
+}
+
+.td-loc {
+  white-space: nowrap;
+  color: #a8c0b4;
+}
+
+.detail-pill {
+  display: inline-flex;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(49, 204, 118, 0.08);
+  border: 1px solid rgba(49, 204, 118, 0.22);
+  color: #82e6aa;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.td-arch {
+  color: #9db8ad;
+  font-size: 0.87rem;
+}
+

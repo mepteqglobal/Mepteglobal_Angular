@@ -1,0 +1,66 @@
+<section id="projects" class="projects-section page-section">
+  <div class="section-head">
+    <span class="section-label">OUR PROJECTS</span>
+    <h2>Selected engineering and construction portfolios.</h2>
+    <p class="section-sub">500+ diverse projects across commercial, residential, hospitality, and industrial sectors worldwide.</p>
+  </div>
+
+  <!-- Featured Projects -->
+  <div class="featured-grid">
+    <article class="featured-card" *ngFor="let p of featuredProjects">
+      <div class="featured-img-wrap">
+        <img [src]="p.image" [alt]="p.title" />
+      </div>
+      <div class="featured-info">
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.description }}</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- Project Categories -->
+  <div class="category-section" *ngFor="let cat of projectCategories">
+    <div class="cat-header">
+      <span class="cat-tag">{{ cat.tag }}</span>
+      <h3 class="cat-title">{{ cat.name }}</h3>
+    </div>
+    <div class="project-grid">
+      <article class="project-card" *ngFor="let p of cat.projects">
+        <img [src]="p.image" [alt]="p.title" />
+        <div class="project-overlay">
+          <h4>{{ p.title }}</h4>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Project List Table -->
+  <div class="proj-table-section">
+    <div class="proj-table-head">
+      <span class="section-label">FULL PORTFOLIO</span>
+      <h3 class="proj-table-title">List of Some Designed Projects</h3>
+    </div>
+    <div class="proj-table-scroll">
+      <table class="proj-table">
+        <thead>
+          <tr>
+            <th>SN</th>
+            <th>Project Name</th>
+            <th>Location</th>
+            <th>Details</th>
+            <th>Architect</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of projectList; let i = index" [class.row-even]="i % 2 === 1">
+            <td class="td-sn">{{ row.sn }}</td>
+            <td class="td-name">{{ row.name }}</td>
+            <td class="td-loc">{{ row.location }}</td>
+            <td class="td-detail"><span class="detail-pill">{{ row.details }}</span></td>
+            <td class="td-arch">{{ row.architect }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

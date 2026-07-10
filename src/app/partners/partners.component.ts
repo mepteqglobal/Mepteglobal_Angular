@@ -5,29 +5,28 @@ import { CommonModule } from '@angular/common';
   selector: 'app-partners',
   standalone: true,
   imports: [CommonModule],
-  styleUrls: ['./partners.component.css'],
-  template: `
-    <section id="partners" class="partners-section page-section">
-      <div class="section-head partners-head">
-        <span class="section-label light-label">OUR TRUSTED PARTNERS</span>
-        <h2>Partnering with brands that rely on dependable engineering.</h2>
-      </div>
-
-      <div class="partner-grid">
-        <div class="partner-card" *ngFor="let p of partnerItems">{{ p }}</div>
-      </div>
-    </section>
-  `
+  templateUrl: './partners.component.html',
+  styleUrls: ['./partners.component.css']
 })
 export class PartnersComponent {
   readonly partnerItems = [
-    'Wallace',
-    'Parle',
-    'RHF',
-    'CarTrade',
-    'Radisson Blu',
-    'Sugee',
+    'HAL-KO Infraprojects',
+    'Gurudev Funicular Ropeways',
+    'Della Group',
     'JSM',
-    'Rajini'
+    'MALK Architecture',
+    'Goregaon Sports Club',
+    'CLaY',
+    'Parle',
+    'Radisson Hotels & Resorts',
+    'Aakruti Designs & Co.',
+    'Studio SP',
+    'Chemito',
+    'CarTradeTech',
+    'RHF',
+    'Sugee',
+    'Wallace Pharmaceuticals',
+    'UCO Bank',
+    'Bajaj',
   ];
 }
