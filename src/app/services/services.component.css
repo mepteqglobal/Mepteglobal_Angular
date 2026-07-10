@@ -138,6 +138,9 @@
   isolation: isolate;
   transition: transform 300ms cubic-bezier(0.23, 1, 0.320, 1), box-shadow 300ms ease, border-color 300ms ease;
   cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .service-visual:hover {
@@ -199,10 +202,7 @@
     radial-gradient(circle at 10% 18%, rgba(77, 151, 255, 0.35), transparent 18%),
     linear-gradient(0deg, rgba(4, 26, 47, 0.14), rgba(4, 26, 47, 0.14)),
     repeating-linear-gradient(90deg, #0d47a1 0 18px, #1e88e5 18px 34px, #26a69a 34px 52px, #43a047 52px 68px),
-    linear-gradient(135deg, #cfe8ff, #f7fbff);
-  background-size: auto, auto, 100% 34%, cover;
-  background-position: center, center, center, center;
-  background-repeat: no-repeat;
+    url("/assets/images/Distribution Piping Systems.jpg") center/cover no-repeat;
 }
 
 .pipes::before {
@@ -219,7 +219,8 @@
 .fire {
   background:
     radial-gradient(circle at 50% 35%, rgba(255, 214, 102, 0.35), transparent 26%),
-    linear-gradient(180deg, #fff5f5 0%, #ffd5d5 100%);
+    linear-gradient(180deg, #fff5f5 0%, #ffd5d5 100%),
+    url("/assets/images/Fire-Protection.webp") center/cover no-repeat;
 }
 
 .fire::before {
@@ -241,7 +242,8 @@
 .fixtures {
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.9), transparent 34%),
-    linear-gradient(180deg, #fefefe 0%, #edf2f7 100%);
+    linear-gradient(180deg, #fefefe 0%, #edf2f7 100%),
+    url("/assets/images/Plumbing.webp") center/cover no-repeat;
 }
 
 .fixtures::before {
@@ -261,7 +263,8 @@
 
 .panels {
   background:
-    linear-gradient(135deg, #e6edf6 0%, #cfd8e3 50%, #f7fafc 100%);
+    linear-gradient(135deg, #e6edf6 0%, #cfd8e3 50%, #f7fafc 100%),
+    url("/assets/images/DIstribution Board.webp") center/cover no-repeat;
 }
 
 .panels::before {
@@ -279,7 +282,8 @@
 .elv {
   background:
     radial-gradient(circle at 50% 24%, rgba(255, 255, 255, 0.6), transparent 22%),
-    linear-gradient(160deg, #eef2ff 0%, #dbeafe 50%, #e0f2fe 100%);
+    linear-gradient(160deg, #eef2ff 0%, #dbeafe 50%, #e0f2fe 100%),
+    url("/assets/images/ELV-SYSTEM-SERVICE-1-1024x576.webp") center/cover no-repeat;
 }
 
 .elv::before {
@@ -296,7 +300,9 @@
 }
 
 .security {
-  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+  background:
+    linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%),
+    url("/assets/images/Monitoring & Access Systems.webp") center/cover no-repeat;
 }
 
 .security::before {
@@ -315,7 +321,8 @@
 
 .cooling {
   background:
-    linear-gradient(180deg, #97b9da 0%, #4d6a84 55%, #2f3c48 100%);
+    linear-gradient(180deg, #97b9da 0%, #4d6a84 55%, #2f3c48 100%),
+    url("/assets/images/Air-Cooled System Arrays.webp") center/cover no-repeat;
 }
 
 .cooling::before {
@@ -336,7 +343,8 @@
 
 .plant {
   background:
-    linear-gradient(135deg, #f2f7fb 0%, #c9d8e6 44%, #8fa8bc 100%);
+    linear-gradient(135deg, #f2f7fb 0%, #c9d8e6 44%, #8fa8bc 100%),
+    url("/assets/images/Central Plant.webp") center/cover no-repeat;
 }
 
 .plant::before {
@@ -351,7 +359,8 @@
 
 .efficiency {
   background:
-    linear-gradient(135deg, #e5eef8 0%, #c7d6e6 52%, #9eb2c6 100%);
+    linear-gradient(135deg, #e5eef8 0%, #c7d6e6 52%, #9eb2c6 100%),
+    url("/assets/images/Optimized Comfort.webp") center/cover no-repeat;
 }
 
 .efficiency::before {
