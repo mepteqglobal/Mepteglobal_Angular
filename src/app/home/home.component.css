@@ -103,7 +103,8 @@
   animation: fadeInScale 0.8s ease-out 0.3s both;
 }
 
-ERROR  max-width: 920px;
+.hero p {
+  max-width: 920px;
   margin: 0 0 26px;
   color: #d8dedf;
   font-size: clamp(1rem, 1.8vw, 1.42rem);
