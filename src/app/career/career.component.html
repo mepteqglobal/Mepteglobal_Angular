@@ -1,0 +1,87 @@
+<section id="career" class="career-section">
+  <div class="career-shell">
+    <div class="career-head">
+      <span class="career-kicker">CAREERS</span>
+      <h2>We are hiring</h2>
+      <p>
+        Join our MEP consultancy team where design precision, technical coordination
+        and project delivery come together. Apply for the opening that matches your expertise.
+      </p>
+    </div>
+
+    <div class="career-grid">
+      <article class="career-card" *ngFor="let opening of openings" [style.--career-accent]="opening.accent">
+        <div class="career-card-top">
+          <span class="career-icon">{{ opening.icon }}</span>
+          <h3>{{ opening.title }}</h3>
+        </div>
+
+        <p>{{ opening.summary }}</p>
+
+        <div class="career-requirements">
+          <span class="career-chip" *ngFor="let requirement of opening.requirements">{{ requirement }}</span>
+        </div>
+
+        <button type="button" class="career-button" (click)="openApplication(opening)">
+          Apply Now
+        </button>
+      </article>
+    </div>
+
+  </div>
+
+  <div class="career-modal-backdrop" *ngIf="selectedOpening" (click)="closeApplication()">
+    <div class="career-modal" (click)="$event.stopPropagation()">
+      <div class="career-modal-header" [style.--career-accent]="selectedOpening.accent">
+        <h3>Apply for {{ selectedOpening.title }}</h3>
+        <button type="button" class="career-close" (click)="closeApplication()" aria-label="Close application form">
+          ×
+        </button>
+      </div>
+
+      <form class="career-form" [formGroup]="applicationForm" (ngSubmit)="submitApplication()" novalidate>
+        <div class="career-form-body">
+          <label>
+            <span>Full Name *</span>
+            <input type="text" formControlName="fullName" placeholder="Enter your full name" />
+            <small *ngIf="isInvalid('fullName')">Please enter at least 3 characters.</small>
+          </label>
+
+          <label>
+            <span>Email Address *</span>
+            <input type="email" formControlName="emailAddress" placeholder="your.email@example.com" />
+            <small *ngIf="isInvalid('emailAddress')">Please enter a valid email address.</small>
+          </label>
+
+          <label>
+            <span>Phone Number *</span>
+            <input type="tel" formControlName="phoneNumber" placeholder="+91 98765 43210" />
+            <small *ngIf="isInvalid('phoneNumber')">Please enter a valid phone number.</small>
+          </label>
+
+          <label>
+            <span>Years of Experience *</span>
+            <input type="text" formControlName="yearsOfExperience" placeholder="0" />
+            <small *ngIf="isInvalid('yearsOfExperience')">Please enter your experience.</small>
+          </label>
+
+          <label>
+            <span>Why do you want to join? *</span>
+            <textarea formControlName="motivation" rows="5" placeholder="Tell us about your background, career goals and why this role fits you."></textarea>
+            <small *ngIf="isInvalid('motivation')">Please enter at least 10 characters.</small>
+          </label>
+
+          <p class="career-note" *ngIf="submissionNote">{{ submissionNote }}</p>
+          <p class="career-error" *ngIf="submissionError">{{ submissionError }}</p>
+
+        </div>
+
+        <div class="career-form-actions">
+          <button type="submit" class="career-submit" [disabled]="isSubmitting">
+            {{ isSubmitting ? 'Sending...' : 'Submit Application' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-partners',
   standalone: true,
   imports: [CommonModule],
+  styleUrls: ['./partners.component.css'],
   template: `
     <section id="partners" class="partners-section page-section">
       <div class="section-head partners-head">

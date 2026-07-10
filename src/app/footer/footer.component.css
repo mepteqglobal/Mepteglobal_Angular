@@ -1,0 +1,150 @@
+:host {
+  display: block;
+}
+
+.site-footer {
+  padding: 64px clamp(18px, 5vw, 64px) 24px;
+  background: linear-gradient(180deg, #060708 0%, #040505 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #c6d1cb;
+}
+
+.page-shell {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(180px, 1fr) minmax(220px, 1.2fr);
+  gap: 32px;
+  padding-bottom: 46px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-brand,
+.footer-links,
+.footer-contact-panel {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.footer-logo {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.footer-brand p,
+.footer-contact-panel p {
+  margin: 0;
+  color: #a5b4aa;
+  line-height: 1.85;
+}
+
+.brand-accent {
+  width: 64px;
+  height: 4px;
+  border-radius: 999px;
+  background: #2fcf7a;
+}
+
+.footer-links h4,
+.footer-contact-panel h4 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footer-links ul {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-links a,
+.footer-contact-panel a {
+  color: #c6d1cb;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible,
+.footer-contact-panel a:hover,
+.footer-contact-panel a:focus-visible {
+  color: #ffffff;
+  outline: none;
+}
+
+.footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.social {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #1ca862;
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.social:hover,
+.social:focus-visible {
+  transform: translateY(-2px);
+  opacity: 0.88;
+  outline: none;
+}
+
+.social.twitter {
+  background: #219c61;
+}
+
+.social.linkedin {
+  background: #138954;
+}
+
+.social.instagram {
+  background: #2cb36f;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  color: #98a89d;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-footer {
+    padding-top: 48px;
+  }
+
+  .footer-logo {
+    letter-spacing: 0.14em;
+  }
+}

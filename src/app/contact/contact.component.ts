@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-contact',
   standalone: true,
   imports: [CommonModule],
+  styleUrls: ['./contact.component.css'],
   template: `
     <section id="contact" class="contact-section page-section">
       <div class="section-head">
@@ -17,14 +18,14 @@ import { CommonModule } from '@angular/common';
           <h3>Send Us a Message</h3>
           <form class="contact-form" autocomplete="off">
             <div class="field-row">
-              <input type="text" placeholder="Your Name *" />
-              <input type="email" placeholder="Your Email *" />
+              <input type="text" placeholder="Your Name *" aria-label="Your name" />
+              <input type="email" placeholder="Your Email *" aria-label="Your email" />
             </div>
             <div class="field-row">
-              <input type="tel" placeholder="Phone Number" />
-              <input type="text" placeholder="Subject" />
+              <input type="tel" placeholder="Phone Number" aria-label="Phone number" />
+              <input type="text" placeholder="Subject" aria-label="Subject" />
             </div>
-            <textarea placeholder="Your Message *"></textarea>
+            <textarea placeholder="Your Message *" aria-label="Your message"></textarea>
             <button type="button" class="btn btn-primary">Send Message</button>
           </form>
         </div>

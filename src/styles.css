@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+	--bg-main: #020814;
+	--bg-surface: rgba(3, 8, 18, 0.92);
+	--text-main: #e8efff;
+	--text-muted: #c7d4f5;
+	--accent: #2fcf7a;
+	--border-soft: rgba(255, 255, 255, 0.1);
+	--focus-ring: #2fcf7a;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	background: var(--bg-main);
+	color: var(--text-main);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}

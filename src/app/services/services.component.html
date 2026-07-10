@@ -1,0 +1,47 @@
+<section id="services" class="services-section">
+  <div class="services-shell">
+    <div class="services-intro">
+      <span class="services-kicker">OUR SERVICES</span>
+      <h2>Engineering disciplines delivered with one coordinated vision.</h2>
+      <p>
+        Explore our core service verticals across plumbing, fire protection,
+        electrical, ELV and HVAC systems. Every scope below is included as part
+        of our multidisciplinary design and consultancy delivery.
+      </p>
+    </div>
+
+    <div class="services-stack">
+      <article class="service-block" *ngFor="let category of serviceCategories">
+        <div class="service-heading">
+          <h3>{{ category.title }}</h3>
+          <div class="service-heading-line"></div>
+          <p>{{ category.subtitle }}</p>
+        </div>
+
+        <p class="service-description">{{ category.description }}</p>
+
+        <div class="service-card-grid">
+          <div
+            class="service-card"
+            *ngFor="let capability of category.capabilities"
+            [style.--service-accent]="capability.accent"
+          >
+            <span class="service-icon" [attr.aria-label]="capability.title + ' icon'">{{ capability.icon }}</span>
+            <span class="service-name">{{ capability.title }}</span>
+          </div>
+        </div>
+
+        <div class="service-visual-grid">
+          <article class="service-visual" *ngFor="let visual of category.visuals" [ngClass]="visual.theme">
+            <div class="visual-overlay"></div>
+            <div class="visual-content">
+              <span>{{ visual.eyebrow }}</span>
+              <h4>{{ visual.title }}</h4>
+              <p>{{ visual.summary }}</p>
+            </div>
+          </article>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,2 @@
+export default `html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:#020814}*,*:before,*:after{box-sizing:border-box}img{max-width:100%;display:block}
+`;

@@ -12,6 +12,24 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
+## Career Form Email Setup
+
+The career form posts to `/api/career-applications` and sends email to `harshaldhake21@gmail.com`.
+
+Set SMTP variables before starting the app:
+
+```powershell
+$env:SMTP_SERVICE = "gmail"
+$env:SMTP_USER = "your-account@gmail.com"
+$env:SMTP_PASS = "your-app-password"
+$env:SMTP_FROM = "your-account@gmail.com"
+npm.cmd start
+```
+
+Notes:
+- For Gmail, use an App Password (regular account password does not work).
+- You can use `SMTP_HOST` and `SMTP_PORT` instead of `SMTP_SERVICE` for non-Gmail providers.
+
 ## Code scaffolding
 
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:

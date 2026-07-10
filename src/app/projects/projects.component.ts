@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-projects',
   standalone: true,
   imports: [CommonModule],
+  styleUrls: ['./projects.component.css'],
   template: `
     <section id="projects" class="projects-section page-section">
       <div class="section-head">
