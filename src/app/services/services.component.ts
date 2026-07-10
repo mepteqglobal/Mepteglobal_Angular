@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule, NgClass, NgFor } from '@angular/common';
+import { NgClass, NgForOf } from '@angular/common';
 
 interface ServiceCapability {
   icon: string;
@@ -25,7 +25,7 @@ interface ServiceCategory {
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, NgFor, NgClass],
+  imports: [NgForOf, NgClass],
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
