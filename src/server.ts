@@ -60,18 +60,14 @@ app.post('/api/career-applications', async (req, res) => {
   }
 
   try {
-    const transporter = nodemailer.createTransport({
-      host,
-      service,
-      port,
-      secure,
-      auth: {
-        user,
-        pass,
-      },
-    });
+    // Build transport config: 'service' (e.g. 'gmail') takes precedence over
+    // manual host/port settings. Mixing both causes nodemailer to behave
+    // unexpectedly, so we keep them mutually exclusive.
+    const transportConfig = service
+      ? { service, auth: { user, pass } }
+      : { host, port, secure, auth: { user, pass } };
 
-    await transporter.verify();
+    const transporter = nodemailer.createTransport(transportConfig);
 
     await transporter.sendMail({
       from,
