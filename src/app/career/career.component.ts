@@ -1,8 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { firstValueFrom } from 'rxjs';
+import emailjs from '@emailjs/browser';
+
+// ── EmailJS configuration ──────────────────────────────────────────────────
+// 1. Sign up free at https://www.emailjs.com/
+// 2. Add an Email Service (Gmail, Outlook, etc.) → copy the Service ID below.
+// 3. Create an Email Template with these variables:
+//      {{position}}, {{full_name}}, {{email_address}},
+//      {{phone_number}}, {{years_of_experience}}, {{motivation}}
+//    Set "To Email" to harshaldhake21@gmail.com in the template.
+// 4. Copy the Template ID and your Public Key (Account → API Keys) below.
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_xxxxxxx'
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xxxxxxx'
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'abcXYZ123...'
 
 interface CareerOpening {
   icon: string;
@@ -50,7 +61,7 @@ export class CareerComponent {
     motivation: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.minLength(10)] })
   });
 
-  constructor(private readonly http: HttpClient) {}
+  constructor() {}
 
   openApplication(opening: CareerOpening): void {
     this.selectedOpening = opening;
@@ -91,15 +102,18 @@ export class CareerComponent {
     this.submissionNote = '';
 
     try {
-      await firstValueFrom(
-        this.http.post('/api/career-applications', {
-          position: this.selectedOpening.title,
-          fullName: value.fullName,
-          emailAddress: value.emailAddress,
-          phoneNumber: value.phoneNumber,
-          yearsOfExperience: value.yearsOfExperience,
-          motivation: value.motivation
-        })
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          position:            this.selectedOpening.title,
+          full_name:           value.fullName,
+          email_address:       value.emailAddress,
+          phone_number:        value.phoneNumber,
+          years_of_experience: value.yearsOfExperience,
+          motivation:          value.motivation,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
       );
 
       this.submissionNote = 'Application sent successfully.';
@@ -111,7 +125,7 @@ export class CareerComponent {
         motivation: ''
       });
     } catch {
-      this.submissionError = 'Unable to send email right now. Please check server SMTP configuration.';
+      this.submissionError = 'Unable to send application. Please try again later.';
     } finally {
       this.isSubmitting = false;
     }
