@@ -8,9 +8,9 @@ import emailjs from '@emailjs/browser';
 // Create a separate Contact template on EmailJS with these variables:
 //   {{from_name}}, {{from_email}}, {{phone}}, {{subject}}, {{message}}
 // Set "To Email" to dhake9322@gmail.com (or harshaldhake21@gmail.com) in the template.
-const EMAILJS_SERVICE_ID       = 'YOUR_SERVICE_ID';            // e.g. 'service_xxxxxxx'
-const EMAILJS_CONTACT_TEMPLATE = 'YOUR_CONTACT_TEMPLATE_ID';  // e.g. 'template_yyyyyyy'
-const EMAILJS_PUBLIC_KEY       = 'YOUR_PUBLIC_KEY';            // e.g. 'abcXYZ123...'
+const EMAILJS_SERVICE_ID       = 'service_xn9eyaq';            // e.g. 'service_xxxxxxx'
+const EMAILJS_CONTACT_TEMPLATE = 'template_uytzx3t';  // e.g. 'template_yyyyyyy'
+const EMAILJS_PUBLIC_KEY       = 'iFiIJsL8mCYJ4evCI';            // e.g. 'abcXYZ123...'
 
 @Component({
   selector: 'app-contact',
