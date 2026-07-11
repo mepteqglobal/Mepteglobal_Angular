@@ -34,6 +34,15 @@ interface ProjectEntry {
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
+  selectedCategoryTag = 'VILLAS';
+
+  get selectedCategory(): ProjectCategory | undefined {
+    return this.projectCategories.find(cat => cat.tag === this.selectedCategoryTag);
+  }
+
+  setActiveCategory(tag: string) {
+    this.selectedCategoryTag = tag;
+  }
 
   readonly featuredProjects: FeaturedProject[] = [
     {

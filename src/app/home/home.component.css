@@ -165,22 +165,26 @@
   margin: 0 auto;
 }
 
-.global-title {
-  margin: 0 0 clamp(32px, 5vw, 52px);
-  color: #f0f6f2;
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
-  font-weight: 900;
-  text-align: center;
-  line-height: 1.2;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  text-wrap: balance;
-}
-
 .global-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
+}
+
+.global-heading {
+  margin-top: clamp(28px, 4vw, 44px);
+  text-align: center;
+}
+
+.global-title {
+  margin: 0;
+  color: #f0f6f2;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 900;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
 }
 
 .global-card {

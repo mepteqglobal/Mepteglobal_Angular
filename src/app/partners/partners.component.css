@@ -41,6 +41,7 @@
 }
 
 .partner-card {
+  position: relative;
   min-height: 96px;
   display: flex;
   align-items: center;
@@ -51,6 +52,7 @@
   background: rgba(255, 255, 255, 0.04);
   text-align: center;
   transition: border-color 0.2s, background 0.2s;
+  overflow: hidden;
 }
 
 .partner-card:hover {
@@ -62,6 +64,29 @@
   max-height: 48px;
   max-width: 100%;
   object-fit: contain;
+  z-index: 1;
+}
+
+.partner-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  text-align: center;
+  z-index: 2;
+}
+
+.partner-card:hover .partner-overlay {
+  opacity: 1;
 }
 
 .partner-name {

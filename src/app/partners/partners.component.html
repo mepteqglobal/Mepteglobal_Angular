@@ -8,6 +8,7 @@
     <div class="partner-card" *ngFor="let p of partnerItems">
       <ng-container *ngIf="p.logo; else nameLabel">
         <img [src]="p.logo" [alt]="p.name" />
+        <div class="partner-overlay">{{ p.name }}</div>
       </ng-container>
       <ng-template #nameLabel>
         <span class="partner-name">{{ p.name }}</span>
