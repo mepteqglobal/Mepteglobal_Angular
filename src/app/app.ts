@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -17,6 +17,7 @@ import { CareerComponent } from './career/career.component';
 })
 export class App {
   menuOpen = false;
+  activeLink = '#home';
 
   readonly navLinks = [
     { label: 'Home', path: '#home', icon: null },
@@ -28,11 +29,49 @@ export class App {
     { label: 'Contact', path: '#contact', icon: '📞', highlight: true }
   ];
 
+  selectLink(path: string): void {
+    this.activeLink = path;
+  }
+
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
   }
 
   closeMenu(): void {
     this.menuOpen = false;
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    this.updateActiveLinkOnScroll();
+  }
+
+  private updateActiveLinkOnScroll(): void {
+    const sectionElements = Array.from(document.querySelectorAll('section[id]')) as HTMLElement[];
+    if (!sectionElements.length) {
+      return;
+    }
+
+    const topThreshold = Math.max(window.innerHeight * 0.2, 120);
+    let currentActive = this.activeLink;
+    let closestSection: HTMLElement | null = null;
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    for (const section of sectionElements) {
+      const rect = section.getBoundingClientRect();
+      const distance = Math.abs(rect.top - topThreshold);
+      if (rect.top <= topThreshold && distance < closestDistance) {
+        closestSection = section;
+        closestDistance = distance;
+      }
+    }
+
+    if (closestSection) {
+      currentActive = `#${closestSection.id}`;
+    }
+
+    if (this.activeLink !== currentActive) {
+      this.activeLink = currentActive;
+    }
   }
 }

@@ -16,7 +16,13 @@
     </button>
     <nav class="nav-links" [class.open]="menuOpen" id="primary-nav" aria-label="Primary navigation">
       @for (link of navLinks; track link.label) {
-        <a [href]="link.path" (click)="closeMenu()" [class.highlight]="link.highlight">
+        <a
+          [href]="link.path"
+          (click)="selectLink(link.path); closeMenu()"
+          [class.highlight]="link.highlight"
+          [class.active]="link.path === activeLink"
+          [attr.aria-current]="link.path === activeLink ? 'page' : null"
+        >
           @if (link.icon) {
             <span class="nav-icon">{{ link.icon }}</span>
           }
