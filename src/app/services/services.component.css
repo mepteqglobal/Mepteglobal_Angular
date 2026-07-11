@@ -18,7 +18,7 @@
 
 .services-intro {
   max-width: 760px;
-  margin: 0 auto clamp(42px, 5vw, 64px);
+  margin: 0 auto 0;
   text-align: center;
 }
 
@@ -57,7 +57,15 @@
 }
 
 .service-heading {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+}
+
+.service-heading-copy {
+  flex: 1;
 }
 
 .service-heading h3 {
@@ -72,9 +80,40 @@
 .service-heading-line {
   width: 74px;
   height: 4px;
-  margin: 14px auto 16px;
+  margin: 14px 0 16px;
   border-radius: 999px;
   background: linear-gradient(90deg, #17c964, #2dd4bf);
+}
+
+.collapse-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f8fbff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.collapse-toggle:hover,
+.collapse-toggle:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(49, 204, 118, 0.3);
+}
+
+.collapse-icon {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .service-heading p,

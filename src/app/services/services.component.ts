@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgClass, NgForOf } from '@angular/common';
+import { CommonModule, NgClass, NgForOf } from '@angular/common';
 
 interface ServiceCapability {
   icon: string;
@@ -25,7 +25,7 @@ interface ServiceCategory {
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [NgForOf, NgClass],
+  imports: [CommonModule, NgForOf, NgClass],
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
@@ -66,6 +66,20 @@ export class ServicesComponent {
       text: 'Proven across commercial, residential, hospitality, and industrial sectors, adapting MEP designs to varied needs.'
     },
   ];
+
+  collapsedCategories = new Set<string>();
+
+  toggleCategory(title: string) {
+    if (this.collapsedCategories.has(title)) {
+      this.collapsedCategories.delete(title);
+    } else {
+      this.collapsedCategories.add(title);
+    }
+  }
+
+  isCollapsed(title: string) {
+    return this.collapsedCategories.has(title);
+  }
 
   readonly serviceCategories: ServiceCategory[] = [
     {

@@ -10,46 +10,11 @@
       </p>
     </div>
 
-    <div class="services-stack">
-      <article class="service-block" *ngFor="let category of serviceCategories">
-        <div class="service-heading">
-          <h3>{{ category.title }}</h3>
-          <div class="service-heading-line"></div>
-          <p>{{ category.subtitle }}</p>
-        </div>
 
-        <p class="service-description">{{ category.description }}</p>
-
-        <div class="service-card-grid">
-          <div
-            class="service-card"
-            *ngFor="let capability of category.capabilities"
-            [style.--service-accent]="capability.accent"
-          >
-            <span class="service-icon" [attr.aria-label]="capability.title + ' icon'">{{ capability.icon }}</span>
-            <span class="service-name">{{ capability.title }}</span>
-          </div>
-        </div>
-
-        <div class="service-visual-grid">
-          <article class="service-visual" *ngFor="let visual of category.visuals" [ngClass]="visual.theme">
-            <div class="visual-overlay"></div>
-            <div class="visual-content">
-              <span>{{ visual.eyebrow }}</span>
-              <h4>{{ visual.title }}</h4>
-              <p>{{ visual.summary }}</p>
-            </div>
-          </article>
-        </div>
-      </article>
-    </div>
-  </div>
-
-  <!-- ── Services Offered ── -->
+      <!-- ── Services Offered ── -->
   <div class="offered-section">
     <div class="offered-header">
       <span class="services-kicker">WHAT WE DO</span>
-      <h2 class="offered-title">Services Offered</h2>
     </div>
 
     <div class="offered-layout">
@@ -78,6 +43,55 @@
       </div>
     </div>
   </div>
+    <div class="services-stack">
+      <article class="service-block" *ngFor="let category of serviceCategories">
+        <div class="service-heading">
+          <div class="service-heading-copy">
+            <h3>{{ category.title }}</h3>
+            <div class="service-heading-line"></div>
+            <p>{{ category.subtitle }}</p>
+          </div>
+          <button
+            class="collapse-toggle"
+            type="button"
+            (click)="toggleCategory(category.title)"
+            [attr.aria-expanded]="!isCollapsed(category.title)"
+          >
+            <span>{{ isCollapsed(category.title) ? 'Show' : 'Hide' }}</span>
+            <span class="collapse-icon">{{ isCollapsed(category.title) ? '+' : '−' }}</span>
+          </button>
+        </div>
+
+        <ng-container *ngIf="!isCollapsed(category.title)">
+          <p class="service-description">{{ category.description }}</p>
+
+          <div class="service-card-grid">
+          <div
+            class="service-card"
+            *ngFor="let capability of category.capabilities"
+            [style.--service-accent]="capability.accent"
+          >
+            <span class="service-icon" [attr.aria-label]="capability.title + ' icon'">{{ capability.icon }}</span>
+            <span class="service-name">{{ capability.title }}</span>
+          </div>
+        </div>
+
+          <div class="service-visual-grid">
+            <article class="service-visual" *ngFor="let visual of category.visuals" [ngClass]="visual.theme">
+              <div class="visual-overlay"></div>
+              <div class="visual-content">
+                <span>{{ visual.eyebrow }}</span>
+                <h4>{{ visual.title }}</h4>
+                <p>{{ visual.summary }}</p>
+              </div>
+            </article>
+          </div>
+        </ng-container>
+      </article>
+    </div>
+  </div>
+
+
 
   <!-- ── 23 Years Excellence Timeline ── -->
   <div class="excellence-section">

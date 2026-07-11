@@ -85,6 +85,17 @@ export class ProjectsComponent {
     { sn: 25, name: 'UCO Bank (MEP Audit)',                                                                             location: 'Fort, Mumbai',              details: 'MEPF Design Consultancy',   architect: 'Ar. Nilesh Bhagat' },
   ];
 
+  itemsToShow = 2;
+  showAllProjects = false;
+
+  get visibleProjectList(): ProjectEntry[] {
+    return this.showAllProjects ? this.projectList : this.projectList.slice(0, this.itemsToShow);
+  }
+
+  toggleProjectList() {
+    this.showAllProjects = !this.showAllProjects;
+  }
+
   readonly projectCategories: ProjectCategory[] = [
     {
       name: 'Residential & High-Rise',
