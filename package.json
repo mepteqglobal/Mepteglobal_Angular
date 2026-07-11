@@ -1,6 +1,7 @@
 {
   "name": "mepteglobal-angular",
   "version": "0.0.0",
+  "homepage": "https://mepteqglobal.github.io/Mepteglobal_Angular",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
