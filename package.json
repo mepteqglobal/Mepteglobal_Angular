@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:gh-pages": "ng build --configuration production --output-mode static --output-path dist/static/browser --base-href /Mepteglobal_Angular/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:Mepteglobal_Angular": "node dist/Mepteglobal_Angular/server/server.mjs"
