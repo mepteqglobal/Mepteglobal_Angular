@@ -11,9 +11,9 @@ import emailjs from '@emailjs/browser';
 //      {{phone_number}}, {{years_of_experience}}, {{motivation}}
 //    Set "To Email" to harshaldhake21@gmail.com in the template.
 // 4. Copy the Template ID and your Public Key (Account → API Keys) below.
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_xxxxxxx'
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xxxxxxx'
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'abcXYZ123...'
+const EMAILJS_SERVICE_ID  = 'service_xn9eyaq';   // e.g. 'service_xxxxxxx'
+const EMAILJS_TEMPLATE_ID = 'template_c2is87j';  // e.g. 'template_xxxxxxx'
+const EMAILJS_PUBLIC_KEY  = 'iFiIJsL8mCYJ4evCI';   // e.g. 'abcXYZ123...'
 
 interface CareerOpening {
   icon: string;
