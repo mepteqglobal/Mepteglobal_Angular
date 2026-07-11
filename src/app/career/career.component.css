@@ -148,10 +148,10 @@
 .career-modal-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 120;
+  z-index: 1100;
   display: grid;
   place-items: center;
-  padding: 24px;
+  padding: 92px 24px 24px;
   background: rgba(9, 12, 25, 0.7);
   backdrop-filter: blur(10px);
 }
@@ -159,8 +159,8 @@
 .career-modal {
   display: flex;
   flex-direction: column;
-  width: min(100%, 760px);
-  max-height: min(92vh, 920px);
+  width: min(100%, 720px);
+  max-height: min(80vh, 680px);
   overflow: hidden;
   border-radius: 28px;
   background: #ffffff;
