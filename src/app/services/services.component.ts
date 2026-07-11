@@ -67,8 +67,6 @@ export class ServicesComponent {
     },
   ];
 
-  collapsedCategories = new Set<string>();
-
   toggleCategory(title: string) {
     if (this.collapsedCategories.has(title)) {
       this.collapsedCategories.delete(title);
@@ -183,4 +181,8 @@ export class ServicesComponent {
       ]
     }
   ];
+
+  collapsedCategories = new Set(
+  this.serviceCategories.map(category => category.title)
+  );
 }
