@@ -49,6 +49,7 @@
 .services-stack {
   display: grid;
   gap: clamp(48px, 6vw, 74px);
+  margin-top: 50px;
 }
 
 .service-block {
