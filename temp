@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Application</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f4f4f4;font-family:Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f4;padding:30px 0;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+
+          <!-- Header -->
+          <tr>
+            <td style="background-color:#1a1a2e;padding:30px 40px;text-align:center;">
+              <h1 style="margin:0;color:#ffffff;font-size:24px;letter-spacing:1px;">MEPTE GLOBAL</h1>
+              <p style="margin:6px 0 0;color:#a0aec0;font-size:13px;">New Career Application Received</p>
+            </td>
+          </tr>
+
+          <!-- Position Banner -->
+          <tr>
+            <td style="background-color:#2f80ed;padding:16px 40px;text-align:center;">
+              <p style="margin:0;color:#ffffff;font-size:16px;font-weight:bold;">
+                Position Applied For: {{position}}
+              </p>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding:36px 40px;">
+
+              <h2 style="margin:0 0 20px;color:#1a1a2e;font-size:18px;border-bottom:2px solid #e2e8f0;padding-bottom:10px;">
+                Applicant Details
+              </h2>
+
+              <!-- Full Name -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
+                <tr>
+                  <td width="40%" style="color:#718096;font-size:13px;font-weight:bold;padding:8px 0;text-transform:uppercase;letter-spacing:0.5px;">Full Name</td>
+                  <td width="60%" style="color:#2d3748;font-size:14px;padding:8px 0;">{{full_name}}</td>
+                </tr>
+              </table>
+
+              <!-- Email -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
+                <tr>
+                  <td width="40%" style="color:#718096;font-size:13px;font-weight:bold;padding:8px 0;text-transform:uppercase;letter-spacing:0.5px;">Email Address</td>
+                  <td width="60%" style="color:#2d3748;font-size:14px;padding:8px 0;">
+                    <a href="mailto:{{email_address}}" style="color:#2f80ed;text-decoration:none;">{{email_address}}</a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Phone -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
+                <tr>
+                  <td width="40%" style="color:#718096;font-size:13px;font-weight:bold;padding:8px 0;text-transform:uppercase;letter-spacing:0.5px;">Phone Number</td>
+                  <td width="60%" style="color:#2d3748;font-size:14px;padding:8px 0;">{{phone_number}}</td>
+                </tr>
+              </table>
+
+              <!-- Experience -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
+                <tr>
+                  <td width="40%" style="color:#718096;font-size:13px;font-weight:bold;padding:8px 0;text-transform:uppercase;letter-spacing:0.5px;">Years of Experience</td>
+                  <td width="60%" style="color:#2d3748;font-size:14px;padding:8px 0;">{{years_of_experience}}</td>
+                </tr>
+              </table>
+
+              <!-- Motivation -->
+              <h2 style="margin:0 0 14px;color:#1a1a2e;font-size:18px;border-bottom:2px solid #e2e8f0;padding-bottom:10px;">
+                Why They Want to Join
+              </h2>
+              <p style="margin:0;color:#4a5568;font-size:14px;line-height:1.7;background-color:#f7fafc;padding:16px;border-left:4px solid #2f80ed;border-radius:4px;">
+                {{motivation}}
+              </p>
+
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color:#f7fafc;padding:20px 40px;text-align:center;border-top:1px solid #e2e8f0;">
+              <p style="margin:0;color:#a0aec0;font-size:12px;">
+                This email was sent automatically via the Mepte Global careers page.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
