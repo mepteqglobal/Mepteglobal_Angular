@@ -7,17 +7,40 @@
   <div class="contact-grid">
     <div class="contact-form-card">
       <h3>Send Us a Message</h3>
-      <form class="contact-form" autocomplete="off">
+      <form class="contact-form" autocomplete="off" [formGroup]="contactForm" (ngSubmit)="sendMessage()">
         <div class="field-row">
-          <input type="text" placeholder="Your Name *" aria-label="Your name" />
-          <input type="email" placeholder="Your Email *" aria-label="Your email" />
+          <div class="field-wrap">
+            <input type="text" formControlName="fromName" placeholder="Your Name *" aria-label="Your name" [class.input-error]="isInvalid('fromName')" />
+            @if (isInvalid('fromName')) {
+              <span class="field-error">Name is required (min 2 characters).</span>
+            }
+          </div>
+          <div class="field-wrap">
+            <input type="email" formControlName="fromEmail" placeholder="Your Email *" aria-label="Your email" [class.input-error]="isInvalid('fromEmail')" />
+            @if (isInvalid('fromEmail')) {
+              <span class="field-error">A valid email address is required.</span>
+            }
+          </div>
         </div>
         <div class="field-row">
-          <input type="tel" placeholder="Phone Number" aria-label="Phone number" />
-          <input type="text" placeholder="Subject" aria-label="Subject" />
+          <input type="tel" formControlName="phone" placeholder="Phone Number" aria-label="Phone number" />
+          <input type="text" formControlName="subject" placeholder="Subject" aria-label="Subject" />
         </div>
-        <textarea placeholder="Your Message *" aria-label="Your message"></textarea>
-        <button type="button" class="btn btn-primary">Send Message</button>
+        <div class="field-wrap">
+          <textarea formControlName="message" placeholder="Your Message *" aria-label="Your message" [class.input-error]="isInvalid('message')"></textarea>
+          @if (isInvalid('message')) {
+            <span class="field-error">Message is required (min 10 characters).</span>
+          }
+        </div>
+        @if (submissionNote) {
+          <p class="form-success">{{ submissionNote }}</p>
+        }
+        @if (submissionError) {
+          <p class="form-error">{{ submissionError }}</p>
+        }
+        <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+          {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+        </button>
       </form>
     </div>
 
