@@ -6,7 +6,12 @@
 
   <div class="partner-grid">
     <div class="partner-card" *ngFor="let p of partnerItems">
-      <span class="partner-name">{{ p }}</span>
+      <ng-container *ngIf="p.logo; else nameLabel">
+        <img [src]="p.logo" [alt]="p.name" />
+      </ng-container>
+      <ng-template #nameLabel>
+        <span class="partner-name">{{ p.name }}</span>
+      </ng-template>
     </div>
   </div>
 </section>

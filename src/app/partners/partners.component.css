@@ -42,8 +42,9 @@
 
 .partner-card {
   min-height: 96px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 18px 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
@@ -55,6 +56,12 @@
 .partner-card:hover {
   border-color: rgba(49, 204, 118, 0.35);
   background: rgba(49, 204, 118, 0.06);
+}
+
+.partner-card img {
+  max-height: 48px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .partner-name {
